@@ -8,21 +8,32 @@ import { MpolCadastroComponent } from './mpol-cadastro/mpol-cadastro.component';
 import { MpolConsultaComponent } from './mpol-consulta/mpol-consulta.component';
 import { MpolEdicaoComponent } from './mpol-edicao/mpol-edicao.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoginComponent } from './login/login.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
+import { PasswordRecoverComponent } from './password-recover/password-recover.component';
+import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
 
 // mapeando as rotas
  const routes : Routes = [
-  {path : '', pathMatch: 'full', redirectTo: 'mpol-consulta' },
+  {path : '', pathMatch: 'full', component: PaginaInicialComponent},
+  {path : 'login', component: LoginComponent},
+  {path : 'register-user', component: RegisterUserComponent},
+  {path : 'password-recover', component: PasswordRecoverComponent},
   {path : 'mpol-cadastro', component: MpolCadastroComponent},
-  {path: 'mpol-consulta', component: MpolConsultaComponent},
+  {path : 'mpol-consulta', component: MpolConsultaComponent},
   {path : 'mpol-edicao/:idCliente', component: MpolEdicaoComponent}// para editar necessitamos do id do cliente
- ];
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     MpolCadastroComponent,
     MpolConsultaComponent,
-    MpolEdicaoComponent
+    MpolEdicaoComponent,
+    LoginComponent,
+    RegisterUserComponent,
+    PasswordRecoverComponent,
+    PaginaInicialComponent
 
   ],
   imports: [

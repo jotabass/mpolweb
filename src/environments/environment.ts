@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiMpol: 'http://localhost:8080/api/mpol'
+  apiMpol: 'http://localhost:8080/api/mpol',
+  apiLogin: 'http://localhost:8080/api/login',
+  apiRegisterUser: 'http://localhost:8080/api/register-user'
 };
 
 /*
