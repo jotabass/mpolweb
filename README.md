@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## alteração feita na rota das paginas de cadastro e register.
+
+## geração de token para logar na pagina com o auxilio do JWT 
+para autenticar o usuários no projeto API na hora do login.
+
+## criado um interceptador com o recurso INTERCEPTOR do Angular ->  para as requisições das APIs onde  sempre que a biblioteca HttpClient fizer uma requisição para um determinado ENDPOINT de uma API,
+ possamos enviar junto com a requisição um TOKEN de autenticação.

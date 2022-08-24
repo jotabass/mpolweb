@@ -33,13 +33,12 @@ export class LoginComponent implements OnInit {
     this.httpClient.post(environment.apiLogin, this.formLogin.value,
       { responseType: 'text' })
       .subscribe({
-        next: () => {
+        next: (result) => {
 
           //guardar o email em um alocal storage
-          localStorage.setItem('email_usuario',
-          
-          this.formLogin.value.email);
-          //redirecionar para a página de consulta de empresas
+          localStorage.setItem('access_token', result);
+
+          //redirecionar para a página de consulta de pessoas
           window.location.href = '/mpol-consulta';
 
         },

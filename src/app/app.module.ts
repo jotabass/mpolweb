@@ -12,6 +12,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { PasswordRecoverComponent } from './password-recover/password-recover.component';
 import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './_helpers/interceptor.helper';
+
 
 // mapeando as rotas
  const routes : Routes = [
@@ -44,7 +47,13 @@ import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.componen
     RouterModule.forRoot(routes),
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

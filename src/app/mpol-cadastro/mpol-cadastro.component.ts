@@ -23,7 +23,7 @@ export class MpolCadastroComponent implements OnInit {// implementa uma interfae
   //criando o modelo de dados do formulário
   formCadastro = new FormGroup({
     nome: new FormControl('', Validators.required),// comeca commvalor inicial vazio mais depois é obrigatorio
-    cpf: new FormControl('', Validators.required)// comeca commvalor inicial vazio mais depois é obrigatorio
+    cpf: new FormControl('', Validators.required) // comeca commvalor inicial vazio mais depois é obrigatorio
   })
   //função para exibir as validações dos campos na página
   get form(): any {
