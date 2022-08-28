@@ -1,0 +1,50 @@
+<div *ngIf="mensagem_sucesso" (click)="mensagem_sucesso = ''" class="alert alert-success alert-dismissible fade show"
+    role="alert">
+    <strong>Sucesso!</strong> {{mensagem_sucesso}}
+    <button type="button" class="btn-close" aria-label="Close"></button>
+</div>
+
+<div>
+    <h3>Consulta de Membros</h3>
+    <p>Listagem dos membros Cadastrados</p>
+    <hr />
+
+    <!-- regua d epaginacao-->
+    <div class="text-center">
+        <pagination-controls (pageChange)="handlePageChange($event)"
+        previousLabel="Página anterior"
+        nextLabel="Próxima página">
+
+        </pagination-controls>
+    </div>
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Membros</th>
+                <th>cpf</th>
+                <th>Operações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of mpol | paginate : { itemsPerPage: 5, currentPage: pagina}">
+                <td>{{e.nome}}</td>
+                <td>{{e.cpf}}</td>
+                <td>
+                    <button [routerLink]="['/mpol-edicao', e.idCliente]" class="btn btn-sm btn-primary">
+                        Editar
+                    </button>
+
+                    &nbsp;
+                    <button (click)="onDelete(e.idCliente)" class="btn btn-sm btn-danger">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    Quantidade de pessoas: {{mpol.length}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

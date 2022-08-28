@@ -1,0 +1,208 @@
+
+<div *ngIf="mensagem_sucesso" (click)="mensagem_sucesso = ''" class="alert alert-success alert-dismissible fade show"
+role="alert">
+<strong>Sucesso!</strong> {{mensagem_sucesso}}
+<button type="button" class="btn-close" aria-label="Close"></button>
+</div>
+
+<div *ngIf="mensagem_erro" (click)="mensagem_erro = ''" class="alert alert-danger alert-dismissible fade show"
+role="alert">
+<strong>Erro!</strong> {{mensagem_erro}}
+<button type="button" class="btn-close" aria-label="Close"></button>
+</div>
+
+
+
+<div class="container mt-5">
+
+<h1>Ministério Profético o Lugar</h1>
+<h5>Pagina de Cadastro</h5>
+<p>Preencha os campos solicitados</p>
+<hr>
+<small>* campos obrigatórios</small>
+
+
+<form class="mt-2" [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+
+  <div class="row mb-1">
+
+    <div class="col-md-6">
+      <label>Nome:*</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="nome"/>
+      <div class="text-danger" *ngIf="form.nome.touched && form.nome.invalid"> Por favor, informe seu nome
+      </div>
+
+
+    </div>
+    <div class="col-md-2">
+      <label>Sexo:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="sexo" />
+
+    </div>
+
+    <div class="col-md-2">
+      <label>Data de nascimento:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="dataNascimento" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Cpf:*</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="cpf" />
+
+      <div class="text-danger" *ngIf="form.cpf.touched && form.cpf.invalid">
+        Por favor, informe o seu cpf.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mb-2">
+
+    <div class="col-md-4">
+      <label>Endereço:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="endereco" />
+    </div>
+
+    <div class="col-md-1">
+      <label>Numero:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="numero" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Complemento:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="complemento" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Bairro:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="bairro" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Cidade:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="cidade" />
+    </div>
+
+    <div class="col-md-1">
+      <label>Estado:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="estado" />
+    </div>
+  </div>
+
+  <div class="row mb-2">
+
+
+    <div class="col-md-2">
+      <label>Cep:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="cep" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Celular:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="celular" />
+    </div>
+
+    <div class="col-md-4">
+      <label>Email:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="email" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Estado civil:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="estadoCivil" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Profissão:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="profissao" />
+    </div>
+  </div>
+
+  <div class="row mb-2">
+
+    <div class="col-md-4">
+      <label>Cônjugue:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="nomeDoConjugue" />
+    </div>
+
+    <div class="col-md-4">
+      <label>Pai:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="pai" />
+    </div>
+
+    <div class="col-md-4">
+      <label>Mãe:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="mae" />
+    </div>
+  </div>
+
+  <div class="row mb-2">
+
+
+    <div class="col-md-2">
+      <label>Identidade:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="identidade" />
+    </div>
+
+    <div class="col-md-1">
+      <label>Origem:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="origem" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Naturalidade:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="naturalidade" />
+    </div>
+
+
+    <div class="col-md-4">
+      <label>Escolaridade:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="escolaridade" />
+    </div>
+
+    <div class="col-md-3">
+      <label>Religião Anterior:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="religiaoAnterior" />
+    </div>
+  </div>
+
+  <div class="row mb-2">
+
+
+    <div class="col-md-2">
+      <label>Batismo nas aguas:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="dataDoBatismo" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Igreja Anterior:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="igrejaAnterior" />
+    </div>
+
+    <div class="col-md-2">
+      <label>Cargo Ocupado:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="cargo" />
+    </div>
+
+    <div class="col-md-3">
+      <label>Recebido por Carta ou Aclamação:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui"
+        formControlName="recebidoPorCartaouAclamacao" />
+    </div>
+
+    <div class="col-md-3">
+      <label>Batismo com Espiro Santo:</label>
+      <input type="text" class="form-control" placeholder="Digite aqui" formControlName="batismoComEspiritoSanto" />
+    </div>
+
+  </div>
+
+  <div class="mb-2">
+    <input type="submit" value="Realizar Cadastro"
+     class="btn btn-success"[disabled]="!formCadastro.valid"  />
+
+  </div>
+
+</form>
+
+</div>
